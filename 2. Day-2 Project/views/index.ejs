@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #e53935;
+        }
+        .edit-button {
+            background-color: #2196F3;
+        }
+        .edit-button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Book Store Project</h1>
+
+    <form action="/insert" method="post">
+        <input type="text" placeholder="Title" name="title" required>
+        <input type="text" placeholder="Author" name="author" required>
+        <input type="number" placeholder="Published Year" name="year" required>
+        <input type="number" placeholder="Pages" name="pages" required>
+        <input type="number" placeholder="Price" name="price" required>
+        <input type="number" placeholder="Published Copies" name="copies" required>
+        <input type="submit" value="Add Book">
+    </form>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published Year</th>
+            <th>Pages</th>
+            <th>Price</th>
+            <th>Published Copies</th>
+            <th>Actions</th>
+        </tr>
+        <% data.map((e) => { %>
+            <tr>
+                <td><%= e.title %></td>
+                <td><%= e.author %></td>
+                <td><%= e.year %></td>
+                <td><%= e.pages %></td>
+                <td><%= e.price %></td>
+                <td><%= e.copies %></td>
+                <td>
+                    <a href="/delete?id=<%= e.id %>"><button>DELETE</button></a>
+                    <a href="/editData?id=<%= e.id %>"><button class="edit-button">EDIT</button></a>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+    
+</body>
+</html>

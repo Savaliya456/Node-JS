@@ -4,6 +4,7 @@ const port = 3000;
 const app = express();
 const db = require("./config/database");
 const crudSchema = require("./model/crudSchema");
+const multer = require("multer")
 
 app.use(express.urlencoded());
 
@@ -14,7 +15,21 @@ app.get("/" , async (req,res)=>{
     res.render("index", {data})
 })
 
-app.post("/insert", async (req, res)=>{
+const Storage = multer.diskStorage({
+    destination: (req, file, cb)=>{
+        ch(null, "uploads/")
+    },
+    filename: (req, file, cb)=>{
+        ch(null, file.fielimame + "-" + Date.now())
+    }
+})
+
+const uploadPic = multer({ storage : Storage}).single("image");
+app.use("/uploads", express.static(peth.jols(__dirname, "uploads")))
+// app.use(express.static(puth.join(__dirname, "uploads")))
+
+app.post("/insert", uploadPic , async (req, res)=>{
+    req.body.image = req.file.filename
     const data = await crudSchema.create(req.body);
     data ? res.redirect("/") : console.log("Data Not Add");
 })

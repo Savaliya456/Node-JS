@@ -1,19 +1,39 @@
 module.exports.home = (req , res)=>{
-    res.render('home')
+    try{
+        res.render('home')
+    } catch(err){
+        console.log(err)
+    }
 }
 
 module.exports.about = (req , res)=>{
-    res.render('about')
+    try{
+        res.render('about')
+    } catch(err){
+        console.log(err)
+    }
 }
 
 module.exports.skills = (req , res)=>{
-    res.render('skills')
+    try{
+        res.render('skills')
+    } catch(err){
+        console.log(err)
+    }
 }
 
 module.exports.contact = (req , res)=>{
-    res.render('contact')
+    try{
+        res.render('contact')
+    } catch(err){
+        console.log(err)
+    }
 }
 
 module.exports.book = (req , res)=>{
-    res.render('book')
+    try{
+        res.render('book')
+    } catch(err){
+        console.log(err)
+    }
 }

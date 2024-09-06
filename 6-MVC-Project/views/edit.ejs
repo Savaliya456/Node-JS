@@ -12,15 +12,27 @@
     }
     .form-container {
       background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      margin-top: 30px;
+      max-width: 700px;
+      margin: 30px auto;
     }
     .form-header {
       margin-bottom: 20px;
+      color: #007bff;
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #007bff;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004080;
     }
   </style>
 </head>
@@ -30,45 +42,45 @@
     <form action="/updateData?id=<%=data.id%>" method="post" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" value="<%=data.title%>" name="title" class="form-control" id="title" placeholder="Enter movie title">
+        <input type="text" value="<%=data.title%>" name="title" class="form-control" id="title" placeholder="Enter movie title" required>
       </div>
       <div class="mb-3">
         <label for="votes" class="form-label">Votes</label>
-        <input type="text" value="<%=data.votes%>" name="votes" class="form-control" id="votes" placeholder="Enter number of votes" min="0">
+        <input type="number" value="<%=data.votes%>" name="votes" class="form-control" id="votes" placeholder="Enter number of votes" min="0" required>
       </div>
       <div class="mb-3">
         <label for="star" class="form-label">Star Rating</label>
-        <input type="number" value="<%=data.star%>" name="star" class="form-control" id="star" placeholder="Enter star rating (0-10)" min="0" max="10">
+        <input type="number" value="<%=data.star%>" name="star" class="form-control" id="star" placeholder="Enter star rating (0-10)" min="0" max="10" required>
       </div>
       <div class="mb-3">
         <label for="genre" class="form-label">Genre</label>
-        <input type="text" value="<%=data.genre%>" name="genre" class="form-control" id="genre" placeholder="Enter movie genre">
+        <input type="text" value="<%=data.genre%>" name="genre" class="form-control" id="genre" placeholder="Enter movie genre" required>
       </div>
       <div class="mb-3">
         <label for="language" class="form-label">Language</label>
-        <input type="text" value="<%=data.language%>" name="language" class="form-control" id="language" placeholder="Enter movie language">
+        <input type="text" value="<%=data.language%>" name="language" class="form-control" id="language" placeholder="Enter movie language" required>
       </div>
       <div class="mb-3">
         <label for="duration" class="form-label">Duration</label>
-        <input type="text" value="<%=data.duration%>" name="duration" class="form-control" id="duration" placeholder="Enter movie duration (e.g., 2h 30m)">
+        <input type="text" value="<%=data.duration%>" name="duration" class="form-control" id="duration" placeholder="Enter movie duration (e.g., 2h 30m)" required>
       </div>
       <div class="mb-3">
         <label for="releaseDate" class="form-label">Release Date</label>
-        <input type="date" value="<%=data.releaseDate%>" name="releaseDate" class="form-control" id="releaseDate">
+        <input type="date" value="<%=data.releaseDate%>" name="releaseDate" class="form-control" id="releaseDate" required>
       </div>
       <div class="mb-3">
         <label for="about" class="form-label">About Movie</label>
-        <textarea class="form-control" name="about" id="about" rows="3" placeholder="Enter movie description"></textarea>
+        <textarea class="form-control" name="about" id="about" rows="4" placeholder="Enter movie description" required></textarea>
       </div>
       <div class="mb-3">
         <label for="coverImg" class="form-label">Cover Image</label>
-        <input type="file" name="coverImg" class="form-control" >
+        <input type="file" name="coverImg" class="form-control" id="coverImg">
       </div>
       <div class="mb-3">
         <label for="poster" class="form-label">Poster Image</label>
-        <input type="file" name="poster" class="form-control">
+        <input type="file" name="poster" class="form-control" id="poster">
       </div>
-      <input type="submit" class="btn btn-primary w-100"></button>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>
   </div>
 </body>

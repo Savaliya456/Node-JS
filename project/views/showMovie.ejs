@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #141414;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .poster-image {
+            height: 450px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 3.5rem;
+            font-weight: bolder;
+            color: #e50914;
+            z-index: 1;
+            position: absolute;
+            bottom: 40%;
+            left: 30px;
+        }
+
+        .details-section {
+            margin-top: 30px;
+            padding: 0px 20px;
+        }
+
+        .buttons{
+            position: fixed;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+        .home-button {
+            top: 20px;
+            left: 20px;
+            background-color: #e50914;
+        }
+
+        .edit-button{
+            top: 20px;
+            right: 130px;
+        }
+
+        .delete-button{
+            top: 20px;
+            right: 20px;
+        }
+
+        .home-button:hover {
+            background-color: #f40612;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" class="buttons home-button">Home</a>
+    <a href="/editData?id=<%=data.id%>" class="buttons edit-button btn btn-warning">Edit</a>
+    <a href="/deleteData?id=<%=data.id%>" class="buttons delete-button btn btn-danger">Delete</a>
+
+    <div class="movie-container">
+        <img src="<%= data.poster %>" alt="<%= data.title %> Poster" class="poster-image">
+        <h1 class="title"><%= data.title %></h1>
+
+        <div class="details-section">
+            <div class="item">
+                <h4>Director: <%= data.director %> </h4>
+            </div>
+            <div class="item">
+                <h4>Genre: <%= data.genre %> </h4>
+            </div>
+            <div class="item">
+                <h4>Release Date: <%= data.releaseDate %> </h4>
+            </div>
+            <div class="item">
+                <h4>Duration: <%= data.duration %> minutes </h4>
+            </div>
+            <div class="item">
+                <h4>Rating: <%= data.rating %>/10 </h4>
+            </div>
+            <div class="item">
+                <h4>Synopsis: <%= data.synopsis %> </h4>
+            </div>
+    </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

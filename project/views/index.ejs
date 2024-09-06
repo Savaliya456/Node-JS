@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Database</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #141414;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .movie-card {
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay h3 {
+            color: white;
+            margin-bottom: auto;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .delete-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .delete-icon a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .delete-icon a:hover {
+            color: #e50914;
+        }
+
+        .header-btn {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .header-btn a {
+            background-color: #e50914;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-btn a:hover {
+            background-color: #b20710;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="header-btn">
+            <a href="/addMovie" class="btn">Add New Movie</a>
+        </div>
+        <h1 class="text-center">Your Movies</h1>
+        <div class="row">
+            <% data.map((e) => { %>
+            <div class="col-3 mt-4">
+                <div class="card movie-card" onclick="window.location.href='/fullDetail?id=<%= e.id %>'">
+                    <img src="<%= e.coverImg %>" alt="<%= e.title %> Poster">
+                    <div class="overlay">
+                        <h3><%= e.title %></h3>
+                        <div class="delete-icon">
+                            <a href="/deleteData?id=<%= e.id %>" title="Delete"><i class="fas fa-trash-alt text-danger"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -22,7 +22,7 @@ const movieschema = mongoose.Schema({
         type : String
     },
     realeasedate : {
-        type : Date
+        type : String
     },
     about : {
         type : String
@@ -32,7 +32,7 @@ const movieschema = mongoose.Schema({
     },
     poster : {
         type : String
-    },
+    }
 })
 
 const schema = mongoose.model('MVC Project Schema', movieschema);

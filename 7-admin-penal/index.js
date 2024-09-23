@@ -14,4 +14,4 @@ app.use('/', require('./routes'))
 
 app.listen(3000,(err)=>{
     err ? console.log(err) : console.log('server start in port 3000')
-})    
+})   

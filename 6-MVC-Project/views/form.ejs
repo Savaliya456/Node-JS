@@ -30,45 +30,45 @@
     <form action="/addData" method="post" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" name="title" class="form-control" id="title" placeholder="Enter movie title">
+        <input type="text" name="title" class="form-control" id="title" placeholder="Enter movie title" required>
       </div>
       <div class="mb-3">
         <label for="votes" class="form-label">Votes</label>
-        <input type="text" name="votes" class="form-control" id="votes" placeholder="Enter number of votes" min="0">
+        <input type="number" name="votes" class="form-control" id="votes" placeholder="Enter number of votes" min="0" required>
       </div>
       <div class="mb-3">
         <label for="star" class="form-label">Star Rating</label>
-        <input type="number" name="star" class="form-control" id="star" placeholder="Enter star rating (0-10)" min="0" max="10">
+        <input type="number" name="star" class="form-control" id="star" placeholder="Enter star rating (0-10)" min="0" max="10" required>
       </div>
       <div class="mb-3">
         <label for="genre" class="form-label">Genre</label>
-        <input type="text" name="genre" class="form-control" id="genre" placeholder="Enter movie genre">
+        <input type="text" name="genre" class="form-control" id="genre" placeholder="Enter movie genre" required>
       </div>
       <div class="mb-3">
         <label for="language" class="form-label">Language</label>
-        <input type="text" name="language" class="form-control" id="language" placeholder="Enter movie language">
+        <input type="text" name="language" class="form-control" id="language" placeholder="Enter movie language" required>
       </div>
       <div class="mb-3">
         <label for="duration" class="form-label">Duration</label>
-        <input type="text" name="duration" class="form-control" id="duration" placeholder="Enter movie duration (e.g., 2h 30m)">
+        <input type="text" name="duration" class="form-control" id="duration" placeholder="Enter movie duration (e.g., 2h 30m)" required>
       </div>
       <div class="mb-3">
         <label for="releaseDate" class="form-label">Release Date</label>
-        <input type="date" name="releaseDate" class="form-control" id="releaseDate">
+        <input type="date" name="releaseDate" class="form-control" id="releaseDate" required>
       </div>
       <div class="mb-3">
         <label for="about" class="form-label">About Movie</label>
-        <textarea class="form-control" name="about" id="about" rows="3" placeholder="Enter movie description"></textarea>
+        <textarea class="form-control" name="about" id="about" rows="3" placeholder="Enter movie description" required></textarea>
       </div>
       <div class="mb-3">
         <label for="coverImg" class="form-label">Cover Image</label>
-        <input type="file" name="coverImg" class="form-control" >
+        <input type="file" name="coverImg" class="form-control" required>
       </div>
       <div class="mb-3">
         <label for="poster" class="form-label">Poster Image</label>
-        <input type="file" name="poster" class="form-control">
+        <input type="file" name="poster" class="form-control" required>
       </div>
-      <input type="submit" class="btn btn-primary w-100"></button>
+      <input type="submit" class="btn btn-primary w-100" value="Submit">
     </form>
   </div>
 </body>

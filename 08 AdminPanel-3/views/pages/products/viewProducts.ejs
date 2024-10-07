@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+  <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <style>
+    .card {
+      border-radius: 15px; /* Add border radius to the card */
+    }
+
+    .card-img-top {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px; /* Ensure image matches card's border radius */
+    }
+  </style>
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <%- include('./../../static/sidebar') %>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <%- include('./../../static/header') %>
+      <!--  Header End -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Products</h4>
+              <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Products</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <% data.map((e, i) => { %>
+            <div class="col-md-4">
+              <div class="card">
+                <img class="card-img-top" src="/<%= e.productImage %>" alt="<%= e.productName %>" style="height: 200px;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= e.productName %></h5>
+                  <p class="card-text">Price: <%= e.price %></p>
+                  <p class="card-text">Rate: <%= e.rate %></p>
+                  <p class="card-text">Stars: <%= e.star %></p>
+                  <p class="card-text">Discount: <%= e.discount %>%</p>
+                  <p class="card-text">Category:<%= e.subcategoryId.categoryId.category %> </p>
+                  <p class="card-text">Sub-Category: <%= e.subcategoryId.subcategory %></p>
+                  <a href="/products/editProduct?id=<%= e.id %>" class="btn btn-warning">Edit</a>
+                  <a href="/products/deleteProduct?id=<%= e.id %>" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page Content -->
+        <!-- ============================================================== -->
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>

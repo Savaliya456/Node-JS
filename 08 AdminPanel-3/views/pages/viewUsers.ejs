@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+  <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <%- include('../static/sidebar') %>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <%- include('../static/header') %>
+      <!--  Header End -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Tables</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body"><br>
+                            <h5 class="card-title m-b-0">Users</h5>
+                        </div>
+                        <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Id</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Age</th>
+                                  <th scope="col">Number</th>
+                                  <th scope="col">Action</th>
+                                </tr>
+                              </thead>    
+                              <tbody>
+                                <% data.map((e,i)=>{ %>
+                                    <tr key="<%=e.id %>">
+                                        <td><%= i+1 %></td>
+                                        <td><%=e.name %></td>
+                                        <td><%=e.email %></td>
+                                        <td><%=e.age %></td>
+                                        <td><%=e.mobile %></td>
+                                        <td>
+                                            <a href="/editUser?id=<%=e.id%>" class="btn btn-warning">Edit</a>
+                                            <a href="/deleteUser?id=<%=e.id%>" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                              </tbody>                          
+                        </table>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>

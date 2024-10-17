@@ -26,7 +26,6 @@ app.use(passport.session());
 app.use(passport.authUser)
 app.use(flash())
 app.use(connectFlash.flashData)
-
 app.use('/', require('./routes'))
 app.use('/category',passport.checkAuthantication, require('./routes/category'))
 app.use('/subcategory',passport.checkAuthantication, require('./routes/subcategory'))

@@ -1,0 +1,171 @@
+/* Home.css */
+.home-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.welcome-section {
+  margin-bottom: 40px;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.roles-section {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Added for vertical centering */
+  gap: 20px;
+}
+
+.role-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.role-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.role-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Blur background when the form is visible */
+.blur-background {
+  filter: blur(5px);
+  pointer-events: none; /* Prevent interaction with the blurred background */
+}
+
+/* Form overlay styles */
+.teacher-form-overlay, .student-form-overlay, .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it's on top */
+}
+
+.teacher-form, .student-form, .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+/* Student row transitions */
+.student-row {
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.student-row.show {
+  max-height: 500px; /* Adjust max height based on expected content */
+  opacity: 1;
+}
+
+/* Optional body styles - can be uncommented and adjusted if needed */
+/*
+body {
+  background: linear-gradient(135deg, #d53369, #daae51);
+  font-family: 'Nunito', sans-serif;
+  color: white;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 50px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.card h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-label {
+  color: #eee;
+  font-weight: 600;
+}
+
+.form-control, .form-select {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #daae51;
+  box-shadow: 0 0 10px rgba(213, 51, 105, 0.4);
+}
+
+.btn-primary {
+  background-color: #d53369;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 18px;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+  background-color: #bf305c;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.text-center {
+  font-size: 15px;
+  margin-top: 30px;
+  color: #ccc;
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 90%;
+  }
+}
+*/

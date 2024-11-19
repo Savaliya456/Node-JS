@@ -1,0 +1,106 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    padding: 0px 20px;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.search-bar {
+    width: 450px;
+    position: relative;
+    left: 50px;
+}
+.search-bar input {
+    width: 100%;
+    padding-left: 2rem;
+    border-radius: 20px;
+}
+.search-bar .fas {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.navbar-nav li{
+    margin-right: 30px;
+}
+
+
+.loginBg {
+    background-image: url('https://images.unsplash.com/photo-1554034483-04fda0d3507b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTZ8fHxlbnwwfHx8fHw%3D');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card {
+    background-color: #ECE6F6 !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 400px;
+}
+
+.card-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #0ba29d;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #086f69;
+}
+
+.form-control:focus {
+    border-color: #0ba29d;
+    box-shadow: 0 0 5px rgba(11, 162, 157, 0.5);
+}
+
+.text-primary {
+    color: #0ba29d !important;
+}
+
+.course_baner {
+    height: 480px;
+    background-image: url('https://wallpapercave.com/wp/wp2036000.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+.course_box {
+    /* height: 300px; */
+    /* border: 1px solid black;     */
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.course_box img{
+    width: 100%;
+    height: 150px !important;
+    /* border: 1px solid black; */
+}
+
+.mycourse{
+    background-color: #ECE6F6;
+    min-height: 100vh;
+}
+
+.addCourse {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
